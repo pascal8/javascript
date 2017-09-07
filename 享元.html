@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var toolTipFactory=(function(){
+			var toolTipPool=[];
+			return {
+				create:function(){
+					if(toolTipPool.length===0){
+						var div=document.createElement('div');
+						document.body.appendChild(div);
+						return div;
+					}else{
+						return toolTipPool.shift();
+					}
+				},
+				recover:function(tooltipDom){
+					return toolTipPool.push(tooltipDom);
+				}
+			}
+		})();
+	</script>
+</body>
+</html>
