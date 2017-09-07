@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var mult=(function(){
+			var cache={};
+			return function(){
+				var args=Array.prototype.join.call(arguments,',');
+				if(args in cache){
+					return cache[args];	
+				}
+				var a=1;
+				for(var i=0,l=arguments.length;i<l;i++){
+					a*=arguments[i];
+				}
+				return cache[args]=a;
+			}
+		})();
+	</script>
+</body>
+</html>

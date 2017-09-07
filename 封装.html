@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var myObject=(function(){
+			var __fuck=function(){
+				console.log('aaaaaaaaaaaaaa')	
+			}
+			var __name='sven';
+			return {
+				getName:function(){
+					return __name;
+				},
+				fuck:__fuck
+			}
+		})();
+		console.log(myObject.getName());
+		console.log(myObject.fuck());
+	</script>
+</body>
+</html>
